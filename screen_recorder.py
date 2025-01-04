@@ -20,7 +20,7 @@ class ScreenRecorder:
         self.target_zoom = 1.0
         self.current_center = None
         self.target_center = None
-        self.smoothing_factor = 0.1
+        self.smoothing_factor = 0.05  # 减小平滑因子，使过渡更加丝滑
         self.mouse_moved = False
         self.last_significant_move_time = 0
         self.move_threshold = 5  # 鼠标移动阈值
@@ -81,7 +81,7 @@ class ScreenRecorder:
             if movement > self.move_threshold:
                 self.mouse_moved = True
                 self.last_significant_move_time = current_time
-                self.target_zoom = 2.0  # 固定使用2倍缩放
+                self.target_zoom = 3.0  # 增大缩放比例到3倍
                 self.target_center = current_mouse_pos
             
             # 平滑过渡
