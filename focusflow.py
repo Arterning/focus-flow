@@ -154,7 +154,7 @@ class ScreenRecorder:
 class RecorderGUI:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("Screen Studio Alternative")
+        self.root.title("FocusFlow")
         self.root.geometry("300x150")
         
         self.recorder = ScreenRecorder()
